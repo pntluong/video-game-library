@@ -10,7 +10,6 @@
 
     <modules>
         <module>video-game-web</module>
-        <module>video-game-common</module>
     </modules>
 
 
