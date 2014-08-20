@@ -73,7 +73,7 @@ public class RepositoryPlatformService implements PlatformService {
         }
 
         platform.setPlatformName(updatedPlatformEntity.getPlatformName());
-//        platform.setVideoGameEntities(updatedPlatformEntity.getVideoGameEntities());
+        platform.setVideoGameEntities(updatedPlatformEntity.getVideoGameEntities());
 
         return platform;
     }

@@ -73,7 +73,9 @@ public class RepositoryVideoGameService implements VideoGameService {
         }
 
         videoGame.setVideoGameName(updatedVideoGameEntity.getVideoGameName());
-//        videoGame.setVideoGameEntities(updatedVideoGameEntity.getVideoGameEntities());
+        videoGame.setVideoGameStatusType(updatedVideoGameEntity.getVideoGameStatusType());
+        videoGame.setDateReleased(updatedVideoGameEntity.getDateReleased());
+        videoGame.setPlatformEntity(updatedVideoGameEntity.getPlatformEntity());
 
         return videoGame;
     }

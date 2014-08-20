@@ -1,7 +1,9 @@
 package com.pntluong.video.games.library.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by ptluong on 1/06/2014.
@@ -19,7 +21,7 @@ public class PlatformEntity {
     private String platformName;
 
     @OneToMany(mappedBy = "platformEntity", targetEntity = VideoGameEntity.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<VideoGameEntity> videoGameEntities;
+    private Set<VideoGameEntity> videoGameEntities = new HashSet<VideoGameEntity>();
 
 //    @Version
 //    private long version= 0;

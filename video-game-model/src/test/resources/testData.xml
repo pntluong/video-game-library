@@ -1,0 +1,6 @@
+<dataset>
+    <platform platform_id = "22" platform_name="platform1"/>
+    <platform platform_id = "23" platform_name="platform2"/>
+    <video_game video_game_id = "22" video_game_name="some title" video_game_status_type="BACKLOG" date_released="2014-09-21" platform_id="22"/>
+    <video_game video_game_id = "23" video_game_name="some title 2" video_game_status_type="BACKLOG" date_released="2014-09-21" platform_id="23"/>
+</dataset>

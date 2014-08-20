@@ -75,5 +75,14 @@ public class VideoGameEntity {
         this.platformEntity = platformEntity;
     }
 
-
+    @Override
+    public String toString() {
+        return "VideoGameEntity{" +
+                "videoGameId=" + videoGameId +
+                ", videoGameName='" + videoGameName + '\'' +
+                ", videoGameStatusType=" + videoGameStatusType +
+                ", dateReleased=" + dateReleased +
+                ", platformEntity=" + platformEntity +
+                '}';
+    }
 }
