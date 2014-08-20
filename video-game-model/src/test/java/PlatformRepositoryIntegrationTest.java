@@ -158,17 +158,24 @@ public class PlatformRepositoryIntegrationTest {
     @Test
     public void createAndFindVideoGameEntityAndItsParent() throws Exception {
         PlatformEntity platformEntity = new PlatformEntity();
-        platformEntity.setPlatformName("I am a platform");
+        String platformName = "I am a platform";
+        platformEntity.setPlatformName(platformName);
+        Date videoGamedateReleased = new Date();
+        String videoGameName = "new title";
 
         VideoGameEntity videoGameEntity = new VideoGameEntity();
-        videoGameEntity.setDateReleased(new Date());
+        videoGameEntity.setDateReleased(videoGamedateReleased);
         videoGameEntity.setVideoGameStatusType(VideoGameStatusType.PLAYING);
-        videoGameEntity.setVideoGameName("new title");
+        videoGameEntity.setVideoGameName(videoGameName);
         videoGameEntity.setPlatformEntity(platformEntity);
 
         VideoGameEntity savedVideoGameEntity = videoGameService.create(videoGameEntity);
 
         VideoGameEntity retrievedVideoGameEntity = videoGameService.findById(savedVideoGameEntity.getVideoGameId());
 
+        assertThat(retrievedVideoGameEntity.getVideoGameId(), is(savedVideoGameEntity.getVideoGameId()));
+        assertThat(retrievedVideoGameEntity.getVideoGameName(), is(savedVideoGameEntity.getVideoGameName()));
+        assertThat(retrievedVideoGameEntity.getVideoGameStatusType(), is(VideoGameStatusType.PLAYING));
+        assertThat(retrievedVideoGameEntity.getPlatformEntity().getPlatformName(), is(platformName));
     }
 }
